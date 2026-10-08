@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<script>(function(){function fmt(a){if(a instanceof Error)return a.message;if(typeof a==="object"&&a!==null){try{return JSON.stringify(a)}catch(e){return String(a)}}return String(a)}function send(t,m,l){try{parent.postMessage({__stc:1,type:t,msg:m,line:l},"*")}catch(e){}}["log","info","warn","error"].forEach(function(m){var o=console[m];console[m]=function(){send(m,Array.prototype.map.call(arguments,fmt).join(" "));if(o)o.apply(console,arguments)}});window.addEventListener("error",function(e){send("error",e.message,e.lineno)});window.addEventListener("unhandledrejection",function(e){send("error","Promise: "+fmt(e.reason))});})();</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моя визитка</title>
+    <!-- Подключаем красивые шрифты от Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        /* Сброс отступов и настройка фона */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            /* Красивый градиентный фон */
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Стеклянная карточка */
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            width: 100%;
+            max-width: 420px;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        /* Эффект при наведении на карточку */
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Верхний блок с приветствием */
+        .header {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Основная часть */
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px 25px;
+            text-align: center;
+        }
+
+        /* Контейнер для фото с градиентной обводкой */
+        .photo-wrapper {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            padding: 4px;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            margin-bottom: 20px;
+            box-shadow: 0 8px 20px rgba(79, 172, 254, 0.4);
+            transition: transform 0.4s ease;
+        }
+
+        .photo-wrapper:hover {
+            transform: scale(1.05) rotate(3deg);
+        }
+
+        .photo-wrapper img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid white;
+        }
+
+        /* Имя и фамилия */
+        .name {
+            font-size: 26px;
+            font-weight: 800;
+            color: #2d3748;
+            margin-bottom: 8px;
+        }
+
+        /* Род деятельности */
+        .role {
+            font-size: 14px;
+            font-weight: 600;
+            color: #4facfe;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        /* Описание / Приветствие */
+        .bio {
+            font-size: 15px;
+            color: #718096;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        /* Кнопки контактов */
+        .contacts {
+            display: flex;
+            gap: 15px;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Кнопка VK */
+        .btn-vk {
+            background-color: #0077FF;
+            color: white;
+            box-shadow: 0 4px 15px rgba(0, 119, 255, 0.3);
+        }
+
+        .btn-vk:hover {
+            background-color: #0066db;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 119, 255, 0.5);
+        }
+
+        /* Кнопка Email */
+        .btn-email {
+            background-color: #edf2f7;
+            color: #4a5568;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .btn-email:hover {
+            background-color: #e2e8f0;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <!-- Заголовок -->
+        <div class="header">
+            Привет! 👋
+        </div>
+
+        <!-- Основная часть -->
+        <div class="content">
+            <div class="photo-wrapper">
+                <!-- Вставьте ссылку на свое фото или оставьте эту заглушку -->
+                <img src="https://i.postimg.cc/bNY02dFm/18d146033bd233c040e844784df328fa.jpg" alt="Моё фото">
+            </div>
+            
+            <h1 class="name">Бологуров Артём</h1>
+            <p class="role">Рад новым знакомствам</p>
+            
+            <p class="bio">
+                Напишите мне в VK, либо почтой. 
+                Всегда открыт для новых людей.
+            </p>
+
+            <!-- Контакты -->
+            <div class="contacts">
+                <!-- Замените ссылку на вашу страницу ВК -->
+                <a href="https://m.vk.ru/isterikalethal" target="_blank" class="btn btn-vk">
+                    ВКонтакте
+                </a>
+                <!-- Замените email на свой -->
+                <a href="abologurov64@gmail.com" class="btn btn-email">
+                    Почта
+                </a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
